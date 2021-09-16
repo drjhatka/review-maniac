@@ -7,7 +7,7 @@
 
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.1/css/bootstrap.css' integrity='sha512-YfFXNd2o6swxA1M0ll6EDdnVdYdE6iz+C6k0Guqf18JW6sVq6Oz9lfbjOso+LMwwNYNxUbp7egkYmC2W/IyeVA==' crossorigin='anonymous'/>
 <link href= "{{  asset('css/skitter.css') }}" type="text/css" media="all" rel="stylesheet" />
-
+<link rel="stylesheet" href="{{ asset('css/frontend.css') }}">
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js' integrity='sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==' crossorigin='anonymous'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.1/js/bootstrap.js' integrity='sha512-9fMNGl7JQrJnqWwQ2a4I2xSDXphpn0Mjq0OY1ZMyWwrbYppp2/iybI8beVLvviaxHTcOxewp7bNtt5ou/9tQeA==' crossorigin='anonymous'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>

@@ -1,7 +1,9 @@
 
 <div class="row">
-    <div class="col-5 card my-2">
-        <div class="skitter skitter-large with-dots">
+    <div class="col-12 card my-2">
+        <div class="card-header bg-primary slider mb-2"> Latest Reviews</div> 
+
+        <div class="skitter skitter-large with-dots" >
             <ul>
               <li>
                 <a href="#cut">
@@ -38,6 +40,6 @@
                 </li>
               </ul>
             </div>
-        
+          
     </div>
 </div>

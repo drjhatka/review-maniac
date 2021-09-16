@@ -1,0 +1,13 @@
+.skitter{
+    max-width: 100% !important;
+}
+.container_skitter img {     
+    height: 460px !important ; 
+    
+} 
+
+.slider{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
