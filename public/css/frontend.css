@@ -1,3 +1,13 @@
+body{
+    background-color: navy;
+}
+
+
+.search-label{
+    color: white;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 .skitter{
     max-width: 100% !important;
 }
