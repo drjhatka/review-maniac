@@ -16,6 +16,8 @@ class CreateAliasesTable extends Migration
         Schema::create('aliases', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('alias');
+            $table->unsignedBigInteger('pornstar_id');
         });
     }
 

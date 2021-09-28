@@ -527,6 +527,7 @@ class ComposerStaticInit680ac93eed01df06b0710b6d246a8fff
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\Alias' => __DIR__ . '/../..' . '/app/Models/Alias.php',
         'App\\Models\\Biography' => __DIR__ . '/../..' . '/app/Models/Biography.php',
+        'App\\Models\\Country' => __DIR__ . '/../..' . '/app/Models/Country.php',
         'App\\Models\\Movie' => __DIR__ . '/../..' . '/app/Models/Movie.php',
         'App\\Models\\Pornstar' => __DIR__ . '/../..' . '/app/Models/Pornstar.php',
         'App\\Models\\Production' => __DIR__ . '/../..' . '/app/Models/Production.php',
