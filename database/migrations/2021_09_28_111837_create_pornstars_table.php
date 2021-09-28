@@ -16,6 +16,7 @@ class CreatePornstarsTable extends Migration
         Schema::create('pornstars', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            
         });
     }
 
