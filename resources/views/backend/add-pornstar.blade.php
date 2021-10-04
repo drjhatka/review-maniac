@@ -1,8 +1,35 @@
 @extends('layouts.backend')
 
 @section('content')
+
+<!-- Modal -->
+<div class="modal fade" id="error_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="error_modal_label">Please Check These Input Errors</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        @if (count($errors)>0)
+            @foreach ($errors->all() as $error)
+                {{--  <div class="alert alert-danger">{{ $error }}</div>   --}}
+               <p> <span class="text-danger text-bold">{{ $error }}</span></p>
+            @endforeach
+        @endif
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
      <div class="row mt-3"> 
-        {!! Form::open() !!}
+        
+        {!! Form::open(['route'=>'add.pornstar']) !!}
         <div class="container">
             <div class="row mt-2 mb-2" style="border: 2px solid red; border-radius:5px; background-color: pink; padding:10px;">
                 <div class="card-title">
@@ -73,6 +100,13 @@
 
                 HTMLHelper::label('does_anal','Does Anal?',['class'=>'labels'],2);
                 HTMLHelper::add_checkbox_input('does_anal','',[],1); 
+echo '<hr class="mt-2 mb-2">';
+                HTMLHelper::label('does_dp','Does DP?',['class'=>'labels'],2);
+                HTMLHelper::add_checkbox_input('does_dp','',[],1); 
+
+                HTMLHelper::label('does_threesome','Does Threesome?',['class'=>'labels'],2);
+                HTMLHelper::add_checkbox_input('does_threesome','',[],1); 
+
                 echo '<hr class="mt-2">';
                 HTMLHelper::label('does_interracial','Does IR?',['class'=>'labels'],2);
                 HTMLHelper::add_checkbox_input('does_interracial','',[],1); 
@@ -97,15 +131,15 @@
 
                     
                     HTMLHelper::label('piercing','Piercing?',['class'=>'labels'],1);
-                    HTMLHelper::add_checkbox_input('piercing','',[],1); 
+                    HTMLHelper::add_checkbox_input('piercing',null,['class'=>'piercing'],1); 
             //Hidden text field based on piercing data
-                    HTMLHelper::add_text_input('piercing_detail',['class'=>'form-control','placeholder'=>'Add Piercing details','hidden'=>true],4);
+                    HTMLHelper::add_text_input('piercing_detail',['class'=>'form-control piercing_detail','placeholder'=>'Add Piercing details','hidden'=>true],4);
                 
                     HTMLHelper::label('tattoos','Tattoos?',['class'=>'labels'],1);
-                    HTMLHelper::add_checkbox_input('tattoos','',[],1); 
+                    HTMLHelper::add_checkbox_input('tattoos','',['class'=>'tattoos'],1); 
             
             //Hidden text field for tattoos description data
-                    HTMLHelper::add_text_input('tattoo_detail',['class'=>'form-control','placeholder'=>'Add Tattoo details','hidden'=>true],4);
+                    HTMLHelper::add_text_input('tattoos_detail',['class'=>'form-control tattoos_detail','placeholder'=>'Add Tattoo details','hidden'=>true],4);
                 
                 @endphp
             </div>
@@ -120,4 +154,37 @@
        
         {!! Form::close() !!}
      </div> 
+     
+
+     <script >
+         $(document).ready(function (value) {
+             $('.piercing').change( function(value) {
+                 if($('.piercing').is(':checked')){
+                     $('.piercing_detail').attr('hidden',false);
+                 }
+                 else{
+                    $('.piercing_detail').attr('hidden',true);
+                 }
+                 
+             });//end change method
+
+             $('.tattoos').change( function(value) {
+                if($('.tattoos').is(':checked')){
+                    $('.tattoos_detail').attr('hidden',false);
+                }
+                else{
+                   $('.tattoos_detail').attr('hidden',true);
+                }
+            });
+
+            //activate modal on error
+            var op = <?PHP echo (!empty($errors->all()) ? json_encode($errors->all()) : '""'); ?>;
+            if(op.length >0){
+                console.log(op.length);
+                //activate modal
+                $('#error_modal').modal('show');
+            }
+
+         });
+     </script>
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PornstarStoreRequest;
 use App\Models\Pornstar;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class BackendController extends Controller
         return view('backend.add-pornstar');
     }
 
-    public function add_pornstar(Request $request){
+    public function add_pornstar(PornstarStoreRequest $request){
 
         $pornstar = new Pornstar();
 
@@ -25,10 +26,10 @@ class BackendController extends Controller
         $pornstar->lastname = isset($request->lastname) ? $request->lastname : null;
 
         $pornstar->age = $request->age;
-        $pornstar->date_of_birth= $request->dob;
+        $pornstar->date_of_birth = isset($request->dob)? $request->dob:strtotime('01/01/1984');
         
     //Body Measurement
-        $pornstar->weight = $request->weight;
+        $pornstar->weight = isset($request->weight)? $request->weight:null;
         $pornstar->height = $request->height;
         $pornstar->breast_size = $request->breast_size;
         $pornstar->belly_size = $request->belly_size;
@@ -36,7 +37,7 @@ class BackendController extends Controller
         $pornstar->ethnicity = $request->ethnicity;
 
     //Boolean Data
-        $pornstar->bubble_butt      = $request->bubble_butt;
+        $pornstar->bubble_butt      = isset($request->bubble_butt)? true:false;
         $pornstar->natural_breast   = $request->natural_breast; 
         $pornstar->is_retired       = $request->is_retired; 
 
