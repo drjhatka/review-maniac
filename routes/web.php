@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BackendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('frontend.index');
 });
+Route::get('/backend/dashboard/', 'App\Http\Controllers\BackendController@home')->name('dashboard');
+Route::get('/backend/dashboard/add-pornstar/','App\Http\Controllers\BackendController@add_pornstar_interface')->name('add.pornstar.ui');
+Route::get('/backend/dashboard/post-pornstar/','App\Http\Controllers\BackendController@add_pornstar_interface')->name('add.pornstar');
