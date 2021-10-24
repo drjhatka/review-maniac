@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/backend/dashboard/', 'App\Http\Controllers\BackendController@home')->name('dashboard');
 Route::get('/backend/dashboard/add-pornstar','App\Http\Controllers\BackendController@add_pornstar_interface')->name('add.pornstar.ui');
 Route::post('/backend/dashboard/post-pornstar','App\Http\Controllers\BackendController@add_pornstar')->name('add.pornstar');
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

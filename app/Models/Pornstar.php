@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use \Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Alias;
 use App\Models\Country;
+use App\Models\Biography;
 
 class Pornstar extends Model
 {
@@ -24,9 +25,15 @@ class Pornstar extends Model
     }
 
     
-    public function country()
+    
+    public function biography()
     {
-        return $this->hasOne(Country::class);
+        return $this->hasOne(Biography::class, 'pornstar_id');
     }
+
+    public function country(){
+        return $this->morphOne(Country::class, 'countryable');
+    }
+    
     
 }

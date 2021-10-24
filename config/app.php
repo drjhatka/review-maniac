@@ -230,7 +230,16 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+
+        //project defined aliases
         'HTMLHelper'=>App\Http\Controllers\HTMLHelper::class,
+        'Pornstar'=>App\Models\Pornstar::class,
+        'Biography'=>App\Models\Biography::class,
+        'Country'=>App\Models\Country::class,
+        'Alias'=>App\Models\Alias::class,
+
+
+        
     ],
 
 ];

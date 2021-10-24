@@ -18,6 +18,8 @@ class CreateCountriesTable extends Migration
             $table->timestamps();
             $table->string('country_name')->default('unknown');
             $table->string('city_name')->nullable();
+            $table->unsignedBigInteger('countryable_id');
+            $table->unsignedBigInteger('countryable_type');
 
         });
     }

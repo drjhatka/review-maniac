@@ -16,6 +16,8 @@ class CreateBiographiesTable extends Migration
         Schema::create('biographies', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+        //Foreign Key
+            $table->unsignedBigInteger('pornstar_id');
         //Name
             $table->string('firstname')->nullable();
             $table->string('middlename')->nullable();
